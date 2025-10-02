@@ -71,7 +71,7 @@ internal class Program
         double value;
         while (true)
         {
-            Console.Write("Enter first argument: ");
+            Console.Write(message);
             if (double.TryParse(Console.ReadLine(), out value))
             {
                 break;
