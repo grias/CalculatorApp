@@ -41,9 +41,18 @@ internal class Program
         string symbol = RequestOperationSymbolFromCommandPrompt();
         double operand2 = RequestDoubleValueFormCommandPrompt("Enter second argument: ");
 
-        double result = _calc.ExecuteOperation(operand1, operand2, symbol);
+        try
+        {
+            double result = _calc.ExecuteOperation(operand1, operand2, symbol);
 
-        Console.WriteLine($"{result} = {operand1} {symbol} {operand2}");
+            Console.WriteLine($"{result} = {operand1} {symbol} {operand2}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
+        }
+
+        
 
     }
 
